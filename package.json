@@ -1,0 +1,57 @@
+{
+  "name": "dsh-api-price-board",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "DSH Web UI 的峰谷价格牌：梁文峰/梁文谷状态、当前模型三价、Search/Fetch 价格与 DeepSeek 账户余额。",
+  "license": "GPL-3.0-only",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node scripts/build-client.mjs",
+    "check": "node scripts/build-client.mjs --check",
+    "test": "node test/pricing.test.mjs && node test/client-boot.test.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KasuganoSora152/DSH_price_board.git"
+  },
+  "homepage": "https://github.com/KasuganoSora152/DSH_price_board",
+  "bugs": {
+    "url": "https://github.com/KasuganoSora152/DSH_price_board/issues"
+  },
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "pricing",
+    "peak",
+    "balance"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  }
+}

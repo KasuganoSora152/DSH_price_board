@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "API Price Board",
+    "description": "A peak/off-peak badge with current model token prices, search/fetch pricing, and account balance."
+  }
+}
